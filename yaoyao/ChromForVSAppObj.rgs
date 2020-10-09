@@ -1,0 +1,26 @@
+HKCR
+{
+	CASWebAgent.Server.1 = s 'CASWebAgent class'
+	{
+		CLSID = s '{19631222-1992-0612-1965-0601621f6be6}'
+	}
+	CASWebAgent.Server = s 'CASWebAgent class'
+	{		
+		CurVer = s 'CASWebAgent.Server.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {19631222-1992-0612-1965-0601621f6be6} = s 'CASWebAgent class'
+		{
+			ProgID = s 'CASWebAgent.Server.1'
+			VersionIndependentProgID = s 'CASWebAgent.Server'
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			TypeLib = s '{19631222-1992-0612-1965-0601f85236e7}'
+			Version = s '1.0'
+		}
+	}
+}
