@@ -141,13 +141,8 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if not exist "$(ProjectDir)..\CloudAppStudio\webruntimedata" (
-  mkdir "$(ProjectDir)..\CloudAppStudio\webruntimedata"
-)
-copy "$(OutDir)$(TargetName)$(TargetExt)" "$(ProjectDir)..\CloudAppStudio\webruntimedata\$(TargetName)$(TargetExt)"
-
-copy "$(TargetPath)" "C:\ProgramData\WebRuntimeApp\WebRuntime\$(TargetName)$(TargetExt)"
-"C:\ProgramData\WebRuntimeApp\WebRuntime\$(TargetName)$(TargetExt)" /RegServer</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -207,13 +202,8 @@ copy "$(TargetPath)" "C:\ProgramData\WebRuntimeApp\WebRuntime\$(TargetName)$(Tar
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if not exist "$(ProjectDir)..\CloudAppStudio\webruntimedata" (
-  mkdir "$(ProjectDir)..\CloudAppStudio\webruntimedata"
-)
-copy "$(OutDir)$(TargetName)$(TargetExt)" "$(ProjectDir)..\CloudAppStudio\webruntimedata\$(TargetName)$(TargetExt)"
-
-copy "$(TargetPath)" "C:\ProgramData\WebRuntimeApp\WebRuntime\$(TargetName)$(TargetExt)"
-"C:\ProgramData\WebRuntimeApp\WebRuntime\$(TargetName)$(TargetExt)" /RegServer</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
