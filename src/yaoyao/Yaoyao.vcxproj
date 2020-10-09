@@ -222,7 +222,7 @@
     <ClCompile Include="CASWebAgent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="CASWebAgent.idl">
+    <Midl Include="Yaoyao.idl">
       <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MkTypLibCompatible>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -253,17 +253,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ChromForVSAppObj.rgs" />
-    <None Include="res\CASWebAgent.rc2" />
     <None Include="CASWebAgent.rgs" />
+    <None Include="res\Yaoyao.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="CASWebAgent.rc" />
+    <ResourceCompile Include="Yaoyao.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\CASWebAgent.ico" />
+    <Image Include="res\Yaoyao.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="res\CASWebAgent.manifest" />
+    <Manifest Include="res\Yaoyao.manifest" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
