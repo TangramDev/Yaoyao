@@ -252,8 +252,8 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChromForVSAppObj.rgs" />
-    <None Include="CASWebAgent.rgs" />
+    <None Include="YaoyaoAppObj.rgs" />
+    <None Include="Yaoyao.rgs" />
     <None Include="res\Yaoyao.rc2" />
   </ItemGroup>
   <ItemGroup>
