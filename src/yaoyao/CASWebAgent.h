@@ -23,7 +23,7 @@ class CYaoyao :
 {
 public:
 	CYaoyao() noexcept;
-	DECLARE_LIBID(LIBID_CASWebAgent);
+	DECLARE_LIBID(LIBID_Yaoyao);
 
 // Overrides
 public:
@@ -37,6 +37,6 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-TANGRAM_OBJECT_ENTRY_AUTO(CLSID_CloudAppStudioWebAgent, CYaoyao)
+TANGRAM_OBJECT_ENTRY_AUTO(CLSID_YaoyaoWebAgent, CYaoyao)
 
 extern CYaoyao theApp;
