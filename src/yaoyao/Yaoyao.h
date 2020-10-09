@@ -8,11 +8,11 @@
 #endif
 
 #include "resource.h"       // main symbols
-#include "CASWebAgent_h.h"
+#include "yaoyao_h.h"
 
 
 // CYaoyao:
-// See CASWebAgent.cpp for the implementation of this class
+// See yaoyao.cpp for the implementation of this class
 //
 
 class CYaoyao :

@@ -3,9 +3,9 @@
 //
 
 #include "stdafx.h"
-#include "CASWebAgent.h"
+#include "yaoyao.h"
 #include <initguid.h>
-#include "CASWebAgent_i.c"
+#include "yaoyao_i.c"
 #include "Psapi.h"
 
 #ifdef _DEBUG
@@ -35,37 +35,6 @@ const GUID CDECL _tlid = { 0x19631222, 0x1992, 0x0612,{0x19, 0x65, 0x06, 0x01, 0
 const WORD _wVerMajor = 1;
 const WORD _wVerMinor = 0;
 
-//查找指定进程  
-DWORD FindProcess(TCHAR* strProcessName)
-{
-	DWORD aProcesses[1024], cbNeeded, cbMNeeded;
-	HMODULE hMods[1024];
-	HANDLE hProcess;
-	TCHAR szProcessName[MAX_PATH];
-
-	if (!EnumProcesses(aProcesses, sizeof(aProcesses), &cbNeeded))
-		return 0;
-	for (int i = 0; i < (int)(cbNeeded / sizeof(DWORD)); i++)
-	{
-		hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, aProcesses[i]);
-		EnumProcessModules(hProcess, hMods, sizeof(hMods), &cbMNeeded);
-		GetModuleFileNameEx(hProcess, hMods[0], szProcessName, sizeof(szProcessName));
-
-		CString strPrcFullName(szProcessName);
-		CString strPrcName(strProcessName);
-		if (_tcsstr(strPrcFullName, strPrcName) || _tcsstr(strPrcFullName, strPrcName.MakeLower()))
-		{
-			CString strNameFull;
-			strNameFull.Format(_T("Process full name：\n%s;"), szProcessName);
-			return(aProcesses[i]);
-		}
-	}
-
-	return 0;
-}
-
-// CYaoyao initialization
-
 BOOL CYaoyao::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
@@ -77,10 +46,6 @@ BOOL CYaoyao::InitInstance()
 	// in your application.
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);
-	if (!FindProcess(_T("devenv.exe")))
-	{
-		return false;
-	}
 
 	if (!__super::InitInstance())
 		return false;
