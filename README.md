@@ -1,13 +1,12 @@
 # Yaoyao: You are another girl I want most
-In the spring of 2018, a girl broke into my world, perhaps by accident, perhaps by a certain destiny, this girl attracted me deeply from all angles, and made me fascinated and excited about her all day long. From that moment on, my work was deeply imprinted on her... After more than two years, she finally became a beautiful girl. Can she attract the elite of this world with her unique charm? Will it be a flash in the pan? With these excitement and uneasiness, I opened the curtain that belongs to her... 
+Yaoyao is Sunny's twin sister, equivalent to Sunny's Cplusplus version.  In the spring of 2018, when sunny arrived, Yaoyao also arrived unexpectedly. Two girls are two beautiful scenery brought infinite reverie to my technical work. Maybe it's the fate that brings me this pair of girls. It's an angel gift. Yao Yao and sunny are different. Although they have the same genes, they have different charm. One girl broke into my world, which made me dizzy. The arrival of another girl often made me fall into the situation of neglecting one and losing the other. They have different temperament, which is difficult to reconcile, and many things are difficult to settle. The two girls, each showing their own style and color, make it difficult for you to choose. It's hard to divide time equally. Up to now, this balance has not been well established. After more than two years, will they show their own style and make you linger?
 
 ## What is Yaoyao?
 
 I have been engaged in software development for almost 30 years, and I have been looking forward to forming a software architecture that I am satisfied with, especially during the prevalence of the Internet. I shoulder the expectations of my family and many friends from all walks of life. These years, I have been happy to create something that I am satisfied with. Sunny is a flash of light: If your thoughts are so beautiful and excite you, what kind of fantastic ideas should it be? If this idea is worth looking forward to, is it a good idea to carve it into an extraordinary and slim girl? Sunny is a girl full of inspiration, shoulders a set of missions that make **Desktop Software** a **disruptor in the Internet age.**
 
 # Yaoyao，你是我另外一个最喜欢的丫头
-2018年春天，一个女孩闯入了我的世界，或许是一种偶然，或许是一种冥冥之中的注定，这个姑娘，从各个角度都深深的吸引着我，让我为之着迷、为她兴奋，从那个时刻起，我的工作深深的刻上了她的烙印……，两年多的时间过去了，这个姑娘终于出落成一个漂亮的少女，她能以她独特的魅力吸引这个世界的精英吗？ 会不会昙花一现？ 带着这些兴奋与忐忑不安，我拉开了属于她的帷幕……
-
+Yaoyao是Sunny的孪生妹妹，相当于Sunny的C++版本，2018年春天，当Sunny到来的时候，瑶瑶也不期而至，两个女孩，两道靓丽的风景线，给我的技术工作带来了无限的遐想……。或许是天道酬勤，命运给我带来这一对女孩，天使般的礼物，让我内心无比的激荡，瑶瑶与Sunny不同，虽然她们有相同的基因，但是有彼此不同的风韵。一个女孩闯入了我的世界，已经令我目不暇接，另外一个女孩的到来，经常使得我陷入顾此失彼的境地，她们有不同的秉性，难以调和，很多事情很难摆平，……。这两个姑娘，各自展示自己的风彩，让你很难取舍。时间很难平等的分配……。时至今日，这种平衡都没有很好的建立。两年多的时间过去了，她们同时出道，会不会各自施展自己的风华，让你流连忘返？
 ## Yaoyao是什么？
 
 从事软件开发快30年了，一直期待着形成一款自己满意的软件架构，特别是互联网盛行的阶段，肩负着家人、诸多各界朋友的期望，这些年一直乐此不疲的打造自己满意的东西。Sunny是灵光一现的想法：如果自己的想法非常之美，是那么令自己为之激动，应该是一种什么样的奇思妙想呢？如果这个构想值得期待，那么就将其雕琢成一个超凡脱俗、亭亭玉立的姑娘，是不是一个好主意？Sunny是一个充满灵光的女孩，肩负着一组使命，这个使命使得桌面软件成为互联网时代的颠覆者。
