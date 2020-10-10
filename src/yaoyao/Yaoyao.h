@@ -16,7 +16,7 @@
 //
 
 class CYaoyao :
-	public CTangramWinAppEx,
+	public CTangramWinApp,
 	public CComObjectRootBase,
 	public CComCoClass<CYaoyao>,
 	public CAtlMfcModule
