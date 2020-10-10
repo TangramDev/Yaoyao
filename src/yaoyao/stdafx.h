@@ -30,8 +30,8 @@
 #include <afxcmn.h>             // MFC support for Windows Common Controls
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
-//#include "TangramAppDelegate.h"
-#include "TangramAppBasic.h"
+#include "TangramAppDelegate.h"
+//#include "TangramAppBasic.h"
 #include <atlbase.h>
 #include <atlcom.h>
 #include <atlstr.h>

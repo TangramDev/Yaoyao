@@ -20,7 +20,7 @@
 
 #include "TangramAppDelegate.h"
 #include "TangramXmlParse.cpp"
-#include "Universe.c"
+//#include "Universe.c"
 
 namespace CommonUniverse
 {
