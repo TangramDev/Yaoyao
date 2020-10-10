@@ -1,6 +1,6 @@
 #pragma once
 /********************************************************************************
-*					Open Universe - version 1.0.1.8							*
+*					Tangram Library - version 10.0.0							*
 *********************************************************************************
 * Copyright (C) 2002-2020 by Tangram Team.   All Rights Reserved.				*
 *
@@ -14,7 +14,7 @@
 * THIS SOFTWARE ON A SINGLE COMPUTER.
 *
 * CONTACT INFORMATION:
-* mailto:tangramteam@outlook.com or mailto:sunhuizlz@yeah.net
+* mailto:tangramteam@outlook.com
 * http://www.tangramteam.com/
 *
 ********************************************************************************/

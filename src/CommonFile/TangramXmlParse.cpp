@@ -1,5 +1,5 @@
 /********************************************************************************
-*					Open Universe - version 1.0.1.8							*
+*					Tangram Library - version 10.0.0							*
 *********************************************************************************
 * Copyright (C) 2002-2020 by Tangram Team.   All Rights Reserved.				*
 *
@@ -13,7 +13,7 @@
 * THIS SOFTWARE ON A SINGLE COMPUTER.
 *
 * CONTACT INFORMATION:
-* mailto:tangramteam@outlook.com or mailto:sunhuizlz@yeah.net
+* mailto:tangramteam@outlook.com
 * http://www.tangramteam.com/
 *
 ********************************************************************************/
@@ -236,7 +236,7 @@ BOOL CTangramXmlParse::ModifyNode(int nRow, int nCol, CString strName, CString s
 	CTangramXmlParse m_Parse;
 	if (m_Parse.LoadXml(strXml) || m_Parse.LoadFile(strXml))
 	{
-		CTangramXmlParse* pWindow = m_Parse.GetChild(TGM_CLUSTER);
+		CTangramXmlParse* pWindow = m_Parse.GetChild(_T("layout"));
 		if (pWindow)
 		{
 			CTangramXmlParse* pNode = pWindow->GetChild(_T("grid"));

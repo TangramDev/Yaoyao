@@ -13,7 +13,7 @@
 #include "targetver.h"
 
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS      // some CString constructors will be explicit
-#define _AFX_NO_MFC_CONTROLS_IN_DIALOGS
+//#define _AFX_NO_MFC_CONTROLS_IN_DIALOGS
 
 // turns off MFC's hiding of some common and often safely ignored warning messages
 #define _AFX_ALL_WARNINGS
@@ -29,8 +29,10 @@
 #ifndef _AFX_NO_AFXCMN_SUPPORT
 #include <afxcmn.h>             // MFC support for Windows Common Controls
 #endif // _AFX_NO_AFXCMN_SUPPORT
+#include <afxcontrolbars.h>     // MFC support for ribbons and control bars
 
-#include "TangramAppBasic.h"
+#include "TangramAppDelegate.h"
+//#include "TangramAppBasic.h"
 #include <atlbase.h>
 #include <atlcom.h>
 #include <atlstr.h>
