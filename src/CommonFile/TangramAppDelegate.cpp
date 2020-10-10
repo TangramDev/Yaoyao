@@ -20,8 +20,12 @@
 
 #include "TangramAppDelegate.h"
 #include "TangramXmlParse.cpp"
-#include "CommonUniverse.cpp"
 #include "Universe.c"
+
+namespace CommonUniverse
+{
+	CHubbleImpl* g_pHubbleImpl = nullptr;
+}
 
 #ifdef _AFXDLL
 extern CFrameWnd* g_pTopLevelFrame = nullptr;
@@ -58,102 +62,6 @@ namespace CommonUniverse
 		BEGIN_MSG_MAP(CTangramHelperWnd)
 		END_MSG_MAP()
 	};
-
-	IUniverseAppProxy::IUniverseAppProxy()
-	{
-		m_bAutoDelete = TRUE;
-		m_hMainWnd = nullptr;
-		m_hClosingFrame = m_hCreatingView = nullptr;
-		m_pvoid = nullptr;
-		m_pCurDocProxy = nullptr;
-		m_strProxyName = _T("");
-		m_strProxyID = _T("");
-		m_strClosingFrameID = _T("");
-		m_strCreatingFrameTitle = _T("");
-
-		m_bCreatingNewFrame = FALSE;
-		m_mapHubbleDoc.clear();
-
-		m_nFrameIndex = 0;
-		m_strAppKey = _T("");
-	}
-
-	BOOL IUniverseAppProxy::InitHubble(void* pVoid)
-	{
-		return TRUE;
-	}
-
-	HWND IUniverseAppProxy::CreateNewFrame(CString strFrameKey)
-	{
-		return nullptr;
-	};
-
-	void IUniverseAppProxy::OnActiveMainFrame(HWND hWnd)
-	{
-	}
-
-	BOOL IUniverseAppProxy::HubbleSaveAllModified()
-	{
-		return TRUE;
-	}
-
-	int IUniverseAppProxy::OnDestroyMainFrame(CString strID, int nMainFrameCount, int nWndType)
-	{
-		return -1;
-	}
-
-	LRESULT IUniverseAppProxy::OnForegroundIdleProc()
-	{
-		return 0;
-	}
-
-	BOOL IUniverseAppProxy::UniversePreTranslateMessage(MSG* pMsg)
-	{
-		return TRUE;
-	}
-
-	void IUniverseAppProxy::MouseMoveProxy(HWND hWnd)
-	{
-	}
-
-	HWND IUniverseAppProxy::GetActivePopupMenu(HWND hWnd)
-	{
-		return nullptr;
-	}
-
-	IHubbleDoc* IUniverseAppProxy::OpenDocument(void* pDocTemplate, CString strFile, BOOL bNewFrame)
-	{
-		return nullptr;
-	}
-
-	IHubbleDoc* IUniverseAppProxy::CreateNewDocument(LPCTSTR lpszFrameID, LPCTSTR lpszAppTitle, void* pDocTemplate, BOOL bNewFrame)
-	{
-		return nullptr;
-	};
-
-	void IUniverseAppProxy::OnActiveDocument(IHubbleDoc* ActiveDoc, IGrid* pGridInDoc, IGrid* pGridInCtrlBar, HWND hCtrlBar)
-	{
-	}
-
-	void IUniverseAppProxy::RemoveDoc(LONGLONG llDocID)
-	{
-		auto it = m_mapHubbleDoc.find(llDocID);
-		if (it != m_mapHubbleDoc.end())
-			m_mapHubbleDoc.erase(it);
-	}
-
-	void IUniverseAppProxy::AddDoc(LONGLONG llDocID, IHubbleDoc* pDoc)
-	{
-		m_mapHubbleDoc[llDocID] = pDoc;
-	}
-
-	IHubbleDoc* IUniverseAppProxy::GetDoc(LONGLONG llDocID)
-	{
-		auto it = m_mapHubbleDoc.find(llDocID);
-		if (it != m_mapHubbleDoc.end())
-			return it->second;
-		return nullptr;
-	}
 
 	IMPLEMENT_SERIAL(CTangramMFCToolBar, CMFCToolBar, VERSIONABLE_SCHEMA | 1)
 		IMPLEMENT_SERIAL(CTangramTabbedPane, CTabbedPane, VERSIONABLE_SCHEMA | 2)
