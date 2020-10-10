@@ -22,6 +22,9 @@
 
 #include <map>
 #include "Universe.h"
+
+#include <afxcontrolbars.h>     // MFC support for ribbons and control bars
+
 #include "metahost.h"
 #include "CommonUniverse.h"
 #include "TangramXmlParse.h"
