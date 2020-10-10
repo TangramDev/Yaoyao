@@ -38,7 +38,7 @@ _IsBrowserModel FuncIsBrowserModel;
 CWinApp* g_pAppBase = nullptr;
 CTangramWinApp* g_pApp = nullptr;
 CTangramWinAppEx* g_pAppEx = nullptr;
-IHubbleAppProxy* g_pAppProxy = nullptr;
+IUniverseAppProxy* g_pAppProxy = nullptr;
 IHubble* g_pHubble = nullptr;
 
 namespace CommonUniverse
@@ -59,7 +59,7 @@ namespace CommonUniverse
 		END_MSG_MAP()
 	};
 
-	IHubbleAppProxy::IHubbleAppProxy()
+	IUniverseAppProxy::IUniverseAppProxy()
 	{
 		m_bAutoDelete = TRUE;
 		m_hMainWnd = nullptr;
@@ -78,76 +78,76 @@ namespace CommonUniverse
 		m_strAppKey = _T("");
 	}
 
-	BOOL IHubbleAppProxy::InitHubble(void* pVoid)
+	BOOL IUniverseAppProxy::InitHubble(void* pVoid)
 	{
 		return TRUE;
 	}
 
-	HWND IHubbleAppProxy::CreateNewFrame(CString strFrameKey)
+	HWND IUniverseAppProxy::CreateNewFrame(CString strFrameKey)
 	{
 		return nullptr;
 	};
 
-	void IHubbleAppProxy::OnActiveMainFrame(HWND hWnd)
+	void IUniverseAppProxy::OnActiveMainFrame(HWND hWnd)
 	{
 	}
 
-	BOOL IHubbleAppProxy::HubbleSaveAllModified()
+	BOOL IUniverseAppProxy::HubbleSaveAllModified()
 	{
 		return TRUE;
 	}
 
-	int IHubbleAppProxy::OnDestroyMainFrame(CString strID, int nMainFrameCount, int nWndType)
+	int IUniverseAppProxy::OnDestroyMainFrame(CString strID, int nMainFrameCount, int nWndType)
 	{
 		return -1;
 	}
 
-	LRESULT IHubbleAppProxy::OnForegroundIdleProc()
+	LRESULT IUniverseAppProxy::OnForegroundIdleProc()
 	{
 		return 0;
 	}
 
-	BOOL IHubbleAppProxy::UniversePreTranslateMessage(MSG* pMsg)
+	BOOL IUniverseAppProxy::UniversePreTranslateMessage(MSG* pMsg)
 	{
 		return TRUE;
 	}
 
-	void IHubbleAppProxy::MouseMoveProxy(HWND hWnd)
+	void IUniverseAppProxy::MouseMoveProxy(HWND hWnd)
 	{
 	}
 
-	HWND IHubbleAppProxy::GetActivePopupMenu(HWND hWnd)
-	{
-		return nullptr;
-	}
-
-	IHubbleDoc* IHubbleAppProxy::OpenDocument(void* pDocTemplate, CString strFile, BOOL bNewFrame)
+	HWND IUniverseAppProxy::GetActivePopupMenu(HWND hWnd)
 	{
 		return nullptr;
 	}
 
-	IHubbleDoc* IHubbleAppProxy::CreateNewDocument(LPCTSTR lpszFrameID, LPCTSTR lpszAppTitle, void* pDocTemplate, BOOL bNewFrame)
+	IHubbleDoc* IUniverseAppProxy::OpenDocument(void* pDocTemplate, CString strFile, BOOL bNewFrame)
+	{
+		return nullptr;
+	}
+
+	IHubbleDoc* IUniverseAppProxy::CreateNewDocument(LPCTSTR lpszFrameID, LPCTSTR lpszAppTitle, void* pDocTemplate, BOOL bNewFrame)
 	{
 		return nullptr;
 	};
 
-	void IHubbleAppProxy::OnActiveDocument(IHubbleDoc* ActiveDoc, IGrid* pGridInDoc, IGrid* pGridInCtrlBar, HWND hCtrlBar)
+	void IUniverseAppProxy::OnActiveDocument(IHubbleDoc* ActiveDoc, IGrid* pGridInDoc, IGrid* pGridInCtrlBar, HWND hCtrlBar)
 	{
 	}
 
-	void IHubbleAppProxy::RemoveDoc(LONGLONG llDocID)
+	void IUniverseAppProxy::RemoveDoc(LONGLONG llDocID)
 	{
 		auto it = m_mapHubbleDoc.find(llDocID);
 		if (it != m_mapHubbleDoc.end())
 			m_mapHubbleDoc.erase(it);
 	}
 
-	void IHubbleAppProxy::AddDoc(LONGLONG llDocID, IHubbleDoc* pDoc)
+	void IUniverseAppProxy::AddDoc(LONGLONG llDocID, IHubbleDoc* pDoc)
 	{
 		m_mapHubbleDoc[llDocID] = pDoc;
 	}
 
-	IHubbleDoc* IHubbleAppProxy::GetDoc(LONGLONG llDocID)
+	IHubbleDoc* IUniverseAppProxy::GetDoc(LONGLONG llDocID)
 	{
 		auto it = m_mapHubbleDoc.find(llDocID);
 		if (it != m_mapHubbleDoc.end())
@@ -659,7 +659,7 @@ namespace CommonUniverse
 				m_strProviderID.MakeLower();
 
 				m_pHubbleImpl->m_pHubbleDelegate = static_cast<IHubbleDelegate*>(this);
-				g_pHubbleImpl->InserttoDataMap(0, m_strProviderID, static_cast<IHubbleAppProxy*>(this));
+				g_pHubbleImpl->InserttoDataMap(0, m_strProviderID, static_cast<IUniverseAppProxy*>(this));
 				g_pHubbleImpl->InserttoDataMap(1, m_strProviderID, static_cast<IHubbleWindowProvider*>(this));
 
 				if (g_pHubbleImpl->m_nAppType != APP_BROWSER &&
@@ -680,7 +680,7 @@ namespace CommonUniverse
 				if (m_strProviderID != _T(""))
 				{
 					m_strProviderID.MakeLower();
-					g_pHubbleImpl->InserttoDataMap(0, m_strProviderID, static_cast<IHubbleAppProxy*>(this));
+					g_pHubbleImpl->InserttoDataMap(0, m_strProviderID, static_cast<IUniverseAppProxy*>(this));
 					g_pHubbleImpl->InserttoDataMap(1, m_strProviderID, static_cast<IHubbleWindowProvider*>(this));
 				}
 			}

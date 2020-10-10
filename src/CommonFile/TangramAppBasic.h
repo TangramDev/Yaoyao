@@ -47,7 +47,7 @@ namespace CommonUniverse
 
 	class CTangramAppDelegate :
 		public IHubbleDelegate,
-		public IHubbleAppProxy,
+		public IUniverseAppProxy,
 		public IHubbleWindowProvider
 	{
 	public:

@@ -157,7 +157,7 @@ namespace CommonUniverse {
 	class CChromeChildProcessHostImplProxy;
 
 	class IHubbleCLRImpl;
-	class IHubbleAppProxy;
+	class IUniverseAppProxy;
 	
 	extern CHubbleImpl* g_pHubbleImpl;
 
@@ -413,11 +413,11 @@ namespace CommonUniverse {
 		virtual void HubbleDocEvent(IHubbleEventObj* pEventObj) {}
 	};
 
-	class IHubbleAppProxy
+	class IUniverseAppProxy
 	{
 	public:
-		IHubbleAppProxy();
-		virtual ~IHubbleAppProxy() {}
+		IUniverseAppProxy();
+		virtual ~IUniverseAppProxy() {}
 
 		BOOL								m_bAutoDelete;
 		HWND								m_hMainWnd;
@@ -620,9 +620,9 @@ namespace CommonUniverse {
 
 		IPCMsg*									m_pCurrentIPCMsg;
 		IHubbleCLRImpl*							m_pCLRProxy;
-		IHubbleAppProxy*						m_pActiveAppProxy;
-		IHubbleAppProxy*						m_pUniverseAppProxy;
-		IHubbleAppProxy*						m_pCosmosAppProxy;
+		IUniverseAppProxy*						m_pActiveAppProxy;
+		IUniverseAppProxy*						m_pUniverseAppProxy;
+		IUniverseAppProxy*						m_pCosmosAppProxy;
 		CMDIChildFormInfo*						m_pCurMDIChildFormInfo;
 		IDispatch*								m_pAppDisp = nullptr;
 		IGrid*									m_pHostViewDesignerNode = nullptr;
@@ -643,7 +643,7 @@ namespace CommonUniverse {
 		map<CString, IHubble*>					m_mapRemoteHubble;
 		map<IGrid*, CString>					m_mapControlScript;
 		//map<CString, void*>						m_mapExcludedObjects;
-		map<CString, IHubbleAppProxy*>			m_mapHubbleAppProxy;
+		map<CString, IUniverseAppProxy*>			m_mapHubbleAppProxy;
 		map<CString, IHubbleWindowProvider*>	m_mapWindowProvider;
 		map<int, HubbleDocTemplateInfo*>		m_mapHubbleDocTemplateInfo;
 		map<CString, HubbleDocTemplateInfo*>	m_mapHubbleDocTemplateInfo2;
@@ -672,7 +672,7 @@ namespace CommonUniverse {
 		virtual IBrowser* GetHostBrowser(HWND hNodeWnd) = 0;
 		virtual void AttachGrid(void* pGridEvents) {}
 		virtual void HubbleInit() {}
-		virtual IHubbleDoc* ConnectHubbleDoc(IHubbleAppProxy* AppProxy, LONGLONG docID, HWND hView, HWND hGalaxy, LPCTSTR strDocType) { return nullptr; }
+		virtual IHubbleDoc* ConnectHubbleDoc(IUniverseAppProxy* AppProxy, LONGLONG docID, HWND hView, HWND hGalaxy, LPCTSTR strDocType) { return nullptr; }
 		virtual CString GetNewLayoutNodeName(BSTR strObjTypeID, IGrid* pDesignNode) { return _T(""); }
 		virtual IGalaxyCluster* Observe(HWND, CString strName, CString strKey) { return nullptr; }
 		virtual IGrid* ObserveCtrl(__int64 handle, CString name, CString NodeTag) { return nullptr; }
